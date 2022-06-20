@@ -17,3 +17,6 @@
 [submodule "opensbi"]
 	path = opensbi
 	url = https://e.coding.net/weidongshan/allwinner-d1s/opensbi.git
+[submodule "busybox"]
+	path = busybox
+	url = https://e.coding.net/weidongshan/allwinner-d1s/busybox-1.35.git

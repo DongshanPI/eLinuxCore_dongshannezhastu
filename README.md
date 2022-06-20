@@ -8,7 +8,7 @@
 
 ```ba
 export PATH=$PATH:/home/book/eLinuxCore_dongshannezhastu/toolchain/riscv64-glibc-gcc-thead_20200702/bin
-export ARCH=rscv
+export ARCH=riscv
 export CROSS_COMPILE=riscv64-unknown-linux-gnu-
 ```
 
@@ -25,7 +25,8 @@ export CROSS_COMPILE=riscv64-unknown-linux-gnu-
 ### 编译opensbi
 
 ```bash
-book@100ask:~/eLinuxCore_dongshannezhastu/opensbi$ 
+book@100ask:~/eLinuxCore_dongshannezhastu/opensbi$ make PLATFORM=thead/c910 PLATFORM_RISCV_ISA=rv64gcxthead  SUNXI_CHIP=sun20iw1p1
+book@100ask:~/eLinuxCore_dongshannezhastu/opensbi$ cp  platform/thead/c910/firmware/fw_jump.bin ../
 ```
 
 
@@ -42,11 +43,11 @@ book@100ask:~/eLinuxCore_dongshannezhastu/u-boot$ cp u-boot-sun20iw1p1.bin ../
 
 ## 编译kernel和设备树
 
-### 编译内核镜像
+### 编译内核
 
 ```
 book@100ask:~/eLinuxCore_dongshannezhastu/linux$ make sun20iw1p1_d1_defconfig
-book@100ask:~/eLinuxCore_dongshannezhastu/linux$ make  -j8
+book@100ask:~/eLinuxCore_dongshannezhastu/linux$ make Image  -j8
 book@100ask:~/eLinuxCore_dongshannezhastu/linux$ cp arch/riscv/boot/Image ../
 ```
 
@@ -62,7 +63,6 @@ mkbootimg --kernel  Image  --ramdisk  ramdisk.img --board  d1-nezha_min --base  
 ```bash
 book@100ask:~/eLinuxCore_dongshannezhastu/linux$ make dtbs
   DTC     arch/riscv/boot/dts/board.dtb
-  
 book@100ask:~/eLinuxCore_dongshannezhastu/linux$ cp  arch/riscv/boot/dts/board.dtb ../
 ```
 
