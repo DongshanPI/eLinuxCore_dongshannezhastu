@@ -1,0 +1,19 @@
+[submodule "toolchain"]
+	path = toolchain
+	url = https://gitlab.com/dongshanpi/toolchain.git
+	branch = master
+[submodule "Tina-pack-tools"]
+	path = Tina-pack-tools
+	url = https://gitee.com/weidongshan/Tina-pack-tools.git
+[submodule "spl"]
+	path = spl
+	url = https://e.coding.net/weidongshan/allwinner-d1s/boot0-spl.git
+[submodule "linux"]
+	path = linux
+	url = https://e.coding.net/weidongshan/allwinner-d1s/linux-5.4.git
+[submodule "u-boot"]
+	path = u-boot
+	url = https://e.coding.net/weidongshan/allwinner-d1s/u-boot-2018.git
+[submodule "opensbi"]
+	path = opensbi
+	url = https://e.coding.net/weidongshan/allwinner-d1s/opensbi.git

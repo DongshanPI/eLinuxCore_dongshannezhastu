@@ -1,0 +1,121 @@
+/*
+ * Allwinner Technology CO., Ltd. sun50iw10p1 soc board.
+ *
+ * soc board support.
+ */
+
+#include "sun50iw10p1-common-board.dts"
+
+&power_sply {
+	dcdc1_vol = <1003300>;
+	dcdc2_vol = <1000940>;
+	aldo1_vol = <1001800>;
+	aldo2_vol = <1001800>;
+	aldo3_vol = <1001800>;
+	dldo1_vol = <1800>;
+	dldo2_vol = <1001800>;
+	dldo3_vol = <1001800>;
+	dldo4_vol = <1001800>;
+	eldo1_vol = <1001800>;
+	eldo2_vol = <1001800>;
+	eldo3_vol = <1001800>;
+	fldo1_vol = <1000900>;
+	dc1sw_vol = <1003300>;
+	dcdc2_mode = <0>;
+	dcdc3_mode = <0>;
+};
+
+&twi6 {
+	clock-frequency = <200000>;
+	pinctrl-0 = <&s_twi0_pins_a>;
+	no_suspend = <1>;
+	twi_drv_used = <1>;
+	twi-supply = <&reg_aldo3>;
+	status = "okay";
+	pmu0: pmu@34 {
+		compatible = "x-powers,axp803";
+		status = "okay";
+		/* interrupts = <0 IRQ_TYPE_LEVEL_LOW>;
+		 * interrupt-parent = <&gic>; */
+		x-powers,drive-vbus-en;
+
+		wakeup-source;
+
+		regulator0: regulators@0 {
+			reg_dcdc1: dcdc1 {
+				regulator-name = "axp803-dcdc1";
+			};
+			reg_dcdc2: dcdc2 {
+				regulator-name = "axp803-dcdc2";
+			};
+			reg_dcdc3: dcdc3 {
+				regulator-name = "axp803-dcdc3";
+			};
+			reg_dcdc4: dcdc4 {
+				regulator-name = "axp803-dcdc4";
+			};
+			reg_dcdc5: dcdc5 {
+				regulator-name = "axp803-dcdc5";
+			};
+			reg_dcdc6: dcdc6 {
+				regulator-name = "axp803-dcdc6";
+			};
+			reg_dcdc7: dcdc7 {
+				regulator-name = "axp803-dcdc7";
+			};
+			reg_rtcldo: rtcldo {
+				/* RTC_LDO is a fixed, always-on regulator */
+				regulator-name = "axp803-rtcldo";
+			};
+			reg_aldo1: aldo1 {
+				regulator-name = "axp803-aldo1";
+			};
+			reg_aldo2: aldo2 {
+				regulator-name = "axp803-aldo2";
+			};
+			reg_aldo3: aldo3 {
+				regulator-name = "axp803-aldo3";
+			};
+			reg_dldo1: dldo1 {
+				regulator-name = "axp803-dldo1";
+			};
+			reg_dldo2: dldo2 {
+				regulator-name = "axp803-dldo2";
+			};
+			reg_dldo3: dldo3 {
+				regulator-name = "axp803-dldo3";
+			};
+			reg_dldo4: dldo4 {
+				regulator-name = "axp803-dldo4";
+			};
+			reg_eldo1: eldo1 {
+				regulator-name = "axp803-eldo1";
+			};
+			reg_eldo2: eldo2 {
+				regulator-name = "axp803-eldo2";
+			};
+			reg_eldo3: eldo3 {
+				regulator-name = "axp803-eldo3";
+			};
+			reg_fldo1: fldo1 {
+				regulator-name = "axp803-fldo1";
+			};
+			reg_fldo2: fldo2 {
+				regulator-name = "axp803-fldo2";
+			};
+			reg_ldoio0: ldoio0 {
+				regulator-name = "axp803-ldoio0";
+			};
+			reg_ldoio1: ldoio1 {
+				regulator-name = "axp803-ldoio1";
+			};
+			reg_dc1sw: dc1sw {
+				regulator-name = "axp803-dc1sw";
+			};
+			reg_drivevbus: drivevbus {
+				regulator-name = "axp803-drivevbus";
+			};
+		};
+	};
+};
+
