@@ -17,3 +17,6 @@
 [submodule "busybox"]
 	path = busybox
 	url = https://e.coding.net/weidongshan/allwinner-d1s/busybox-1.35.git
+[submodule "linux"]
+	path = linux
+	url = https://e.coding.net/weidongshan/allwinner-d1s/linux-5.4.git
