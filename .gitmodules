@@ -8,9 +8,6 @@
 [submodule "spl"]
 	path = spl
 	url = https://e.coding.net/weidongshan/allwinner-d1s/boot0-spl.git
-[submodule "linux"]
-	path = linux
-	url = https://e.coding.net/weidongshan/allwinner-d1s/linux-5.4.git
 [submodule "u-boot"]
 	path = u-boot
 	url = https://e.coding.net/weidongshan/allwinner-d1s/u-boot-2018.git
